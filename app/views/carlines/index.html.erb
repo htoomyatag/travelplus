@@ -1,0 +1,40 @@
+
+<div class="portlet box blue">
+            <div class="portlet-title">
+              <div class="caption">
+              carlines listings
+              </div>
+            </div>
+
+            <div class="portlet-body form">
+                
+                <br/>
+                <p style="padding-left:20px;">
+          <%= link_to 'New carline', new_carline_path, :class => "btn btn-default" %></p>
+          <table class="table table-bordered" style="padding:30px;">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @carlines.each do |carline| %>
+                <tr>
+                  <td><%= carline.name %></td>
+                  <td><%= carline.phone %></td>
+                  <td><%= carline.address %></td>
+                  <td><%= link_to 'Show', carline %></td>
+                  <td><%= link_to 'Edit', edit_carline_path(carline) %></td>
+                  <td><%= link_to 'Destroy', carline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+            </div>
+</div>
+
